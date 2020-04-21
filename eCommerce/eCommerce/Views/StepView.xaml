@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="eCommerce.Views.StepView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="White"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout Margin="15" HorizontalOptions="FillAndExpand">
+
+            <!--  Nav Bar  -->
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    HasShadow="False"
+                    HeightRequest="40"
+                    WidthRequest="40">
+                    <Image
+                        Margin="0,10,0,10"
+                        Aspect="AspectFit"
+                        HeightRequest="12"
+                        HorizontalOptions="StartAndExpand"
+                        Source="shape"
+                        WidthRequest="6" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="OD - 424923192 - N"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="SFPro.ttf#Bold" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+
+                <StackLayout>
+                    <Image
+                        Margin="13,0,0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="40"
+                        WidthRequest="40" />
+                </StackLayout>
+            </StackLayout>
+
+            <!--  Body  -->
+            <ScrollView>
+                <StackLayout Margin="0,20,5,5">
+                    <StackLayout
+                        HeightRequest="100"
+                        Orientation="Horizontal"
+                        Spacing="0">
+                        <StackLayout>
+                            <Label
+                                x:Name="date1"
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                Text="20/18"
+                                TextColor="#929292">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label
+                                x:Name="date11"
+                                FontAttributes="Bold"
+                                FontSize="10"
+                                Text="10:00 AM"
+                                TextColor="#929292">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Margin="30,0,20,0">
+                            <Frame
+                                Margin="0"
+                                Padding="0"
+                                BackgroundColor="White"
+                                CornerRadius="16"
+                                HeightRequest="30"
+                                WidthRequest="30">
+                                <Frame
+                                    x:Name="frame1"
+                                    Margin="7"
+                                    Padding="0"
+                                    BackgroundColor="#00C569"
+                                    CornerRadius="8"
+                                    HeightRequest="16"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="16" />
+                            </Frame>
+                            <BoxView
+                                x:Name="line1"
+                                Margin="0,-5,0,0"
+                                BackgroundColor="#00C569"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                WidthRequest="2" />
+                        </StackLayout>
+
+                        <StackLayout Margin="20,0,20,0">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Order Signed"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                Text="Lagos State, Nigeria"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <StackLayout
+                        Margin="0,-5,0,0"
+                        HeightRequest="100"
+                        Orientation="Horizontal"
+                        Spacing="0">
+                        <StackLayout>
+                            <Label
+                                x:Name="date2"
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                Text="20/18"
+                                TextColor="#929292">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label
+                                x:Name="date22"
+                                FontAttributes="Bold"
+                                FontSize="10"
+                                Text="10:00 AM"
+                                TextColor="#929292">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Margin="30,0,20,0">
+                            <Frame
+                                Margin="0"
+                                Padding="0"
+                                BackgroundColor="White"
+                                CornerRadius="16"
+                                HeightRequest="30"
+                                WidthRequest="30">
+                                <Frame
+                                    x:Name="frame2"
+                                    Margin="7"
+                                    Padding="0"
+                                    BackgroundColor="#00C569"
+                                    CornerRadius="8"
+                                    HeightRequest="16"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="16" />
+                            </Frame>
+                            <BoxView
+                                x:Name="line2"
+                                Margin="0,-5,0,0"
+                                BackgroundColor="#00C569"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                WidthRequest="2" />
+                        </StackLayout>
+
+                        <StackLayout Margin="20,0,20,0">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Order Processed"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                Text="Lagos State, Nigeria"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                        Margin="0,-5,0,0"
+                        HeightRequest="100"
+                        Orientation="Horizontal"
+                        Spacing="0">
+                        <StackLayout>
+                            <Label
+                                x:Name="date3"
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                Text="20/18"
+                                TextColor="#929292">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label
+                                x:Name="date33"
+                                FontAttributes="Bold"
+                                FontSize="10"
+                                Text="10:00 AM"
+                                TextColor="#929292">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Margin="30,0,20,0">
+                            <Frame
+                                Margin="0"
+                                Padding="0"
+                                BackgroundColor="White"
+                                CornerRadius="16"
+                                HeightRequest="30"
+                                WidthRequest="30">
+                                <Frame
+                                    x:Name="frame3"
+                                    Margin="7"
+                                    Padding="0"
+                                    BackgroundColor="#00C569"
+                                    CornerRadius="8"
+                                    HeightRequest="16"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="16" />
+                            </Frame>
+                            <BoxView
+                                x:Name="line3"
+                                Margin="0,-5,0,0"
+                                BackgroundColor="#00C569"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                WidthRequest="2" />
+                        </StackLayout>
+
+                        <StackLayout Margin="20,0,20,0">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Shipped "
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                Text="Lagos State, Nigeria"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                        Margin="0,-5,0,0"
+                        HeightRequest="100"
+                        Orientation="Horizontal"
+                        Spacing="0">
+                        <StackLayout>
+                            <Label
+                                x:Name="date4"
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                Text="20/18"
+                                TextColor="#929292">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label
+                                x:Name="date44"
+                                FontAttributes="Bold"
+                                FontSize="10"
+                                Text="10:00 AM"
+                                TextColor="#929292">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Margin="30,0,20,0">
+                            <Frame
+                                Margin="0"
+                                Padding="0"
+                                BackgroundColor="White"
+                                CornerRadius="16"
+                                HeightRequest="30"
+                                WidthRequest="30">
+                                <Frame
+                                    x:Name="frame4"
+                                    Margin="7"
+                                    Padding="0"
+                                    BackgroundColor="#00C569"
+                                    CornerRadius="8"
+                                    HeightRequest="16"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="16" />
+                            </Frame>
+                            <BoxView
+                                x:Name="line4"
+                                Margin="0,-5,0,0"
+                                BackgroundColor="#00C569"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                WidthRequest="2" />
+                        </StackLayout>
+
+                        <StackLayout Margin="20,0,20,0">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Out for delivery"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                Text="Lagos State, Nigeria"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                        Margin="0,-5,0,0"
+                        HeightRequest="100"
+                        Orientation="Horizontal"
+                        Spacing="0">
+                        <StackLayout>
+                            <StackLayout>
+                                <Label
+                                    x:Name="date5"
+                                    FontAttributes="Bold"
+                                    FontSize="12"
+                                    Text="20/18"
+                                    TextColor="#929292">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <Label
+                                    x:Name="date55"
+                                    FontAttributes="Bold"
+                                    FontSize="10"
+                                    Text="10:00 AM"
+                                    TextColor="#929292">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                            </StackLayout>
+                        </StackLayout>
+
+
+                        <StackLayout Margin="30,0,20,0">
+                            <Frame
+                                Margin="0"
+                                Padding="0"
+                                BackgroundColor="White"
+                                CornerRadius="16"
+                                HeightRequest="30"
+                                WidthRequest="30">
+                                <Frame
+                                    x:Name="frame5"
+                                    Margin="7"
+                                    Padding="0"
+                                    BackgroundColor="#00C569"
+                                    CornerRadius="8"
+                                    HeightRequest="16"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="16" />
+                            </Frame>
+
+                        </StackLayout>
+
+                        <StackLayout Margin="20,0,20,0">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Delivered"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="12"
+                                Text="Lagos State, Nigeria"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

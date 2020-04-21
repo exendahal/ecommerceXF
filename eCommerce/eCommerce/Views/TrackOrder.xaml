@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="eCommerce.Views.TrackOrder"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:eCommerce.Model"
+    BackgroundColor="White"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <Style TargetType="StackLayout">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+
+
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <!--  Nav Bar  -->
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    HasShadow="False"
+                    HeightRequest="40"
+                    WidthRequest="40">
+                    <Image
+                        Margin="0,10,0,10"
+                        Aspect="AspectFit"
+                        HeightRequest="12"
+                        HorizontalOptions="StartAndExpand"
+                        Source="shape"
+                        WidthRequest="6" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Track Order"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="SFPro.ttf#Bold" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+
+                <StackLayout>
+                    <Image
+                        Margin="13,0,0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="40"
+                        WidthRequest="40" />
+                </StackLayout>
+            </StackLayout>
+
+
+
+            <StackLayout Margin="20,20,20,0">
+                <CollectionView
+                    IsGrouped="true"
+                    ItemsSource="{Binding track}"
+                    SelectionChanged="OnItemSelected"
+                    SelectionMode="Multiple">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame
+                                    Margin="0"
+                                    Padding="0"
+                                    BackgroundColor="Transparent"
+                                    HasShadow="True">
+                                    <StackLayout Margin="20" Orientation="Horizontal">
+                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                            <Label
+                                                FontSize="16"
+                                                HorizontalOptions="StartAndExpand"
+                                                Text="{Binding orderId}"
+                                                TextColor="Black">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+
+                                            <Label
+                                                Margin="0,5,0,5"
+                                                FontSize="14"
+                                                HorizontalOptions="StartAndExpand"
+                                                Text="{Binding price}"
+                                                TextColor="#00C569">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+
+                                            <Frame
+                                                Margin="0,15,0,15"
+                                                Padding="0"
+                                                BackgroundColor="#00C569"
+                                                CornerRadius="2"
+                                                HasShadow="False"
+                                                IsClippedToBounds="True">
+                                                <Label
+                                                    Margin="12,10,12,10"
+                                                    FontSize="14"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    Text="{Binding status}"
+                                                    TextColor="White"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    VerticalTextAlignment="Center">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                            </Frame>
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="EndAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image
+                                                    Margin="2"
+                                                    Aspect="AspectFit"
+                                                    HeightRequest="50"
+                                                    Source="buyitem"
+                                                    WidthRequest="50" />
+                                                <Image
+                                                    Margin="2"
+                                                    Aspect="AspectFit"
+                                                    HeightRequest="50"
+                                                    Source="buyitem"
+                                                    WidthRequest="50" />
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image
+                                                    Margin="2"
+                                                    Aspect="AspectFit"
+                                                    HeightRequest="50"
+                                                    Source="buyitem"
+                                                    WidthRequest="50" />
+                                                <Frame
+                                                    Margin="2"
+                                                    Padding="0"
+                                                    BorderColor="#E1E1E1"
+                                                    HasShadow="False"
+                                                    HeightRequest="50"
+                                                    WidthRequest="50">
+                                                    <Label
+                                                        FontSize="14"
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        Text="+4"
+                                                        TextColor="Black"
+                                                        VerticalOptions="CenterAndExpand">
+                                                        <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
+                                                </Frame>
+
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <Label
+                                FontSize="14"
+                                HorizontalOptions="StartAndExpand"
+                                Text="{Binding Date}"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+
+                        </DataTemplate>
+                    </CollectionView.GroupHeaderTemplate>
+                    <!--<collectionview.groupfootertemplate>
+                        <datatemplate>
+                            <label margin="0,0,0,10" text="{binding count, stringformat='total animals: {0:d}'}" />
+                        </datatemplate>
+                    </collectionview.groupfootertemplate>-->
+                </CollectionView>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
