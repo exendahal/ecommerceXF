@@ -16,7 +16,7 @@ namespace eCommerce.Views
         public BrandPage(String name)
         {
             InitializeComponent();
-            //title.Text = name;
+            title.Text = name;
             this.ItemsSource = new MainClass[] {
                 new MainClass ("All",new List<ItemsPreview>(){ new ItemsPreview {ImageUrl = "Image1",Name = "Smart Bluetooth Speaker", brand = "Bang and Olufsen",price = "$90"}, new ItemsPreview { ImageUrl = "Image7", Name = "B&o Desk Lamp", brand = "Bang and Olufsen", price = "$450" },new ItemsPreview { ImageUrl = "Image8", Name = "BeoPlay Stand Speaker", brand = "Bang and Olufsen", price = "$300" } }),
                 new MainClass ("Headphones",new List<ItemsPreview>(){ new ItemsPreview {ImageUrl = "Image1",Name = "Smart Bluetooth Speaker", brand = "Bang and Olufsen",price = "$90"}, new ItemsPreview { ImageUrl = "Image7", Name = "B&o Desk Lamp", brand = "Bang and Olufsen", price = "$450" },new ItemsPreview { ImageUrl = "Image8", Name = "BeoPlay Stand Speaker", brand = "Bang and Olufsen", price = "$300" } }),

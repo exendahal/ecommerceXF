@@ -26,7 +26,8 @@ namespace eCommerce.Views
         async void OnBrandsSelected(object sender, SelectionChangedEventArgs e)
         {
             string current = (e.CurrentSelection.FirstOrDefault() as FeaturedBrands)?.brand;
-            await Navigation.PushModalAsync(new BrandPage(current));
+           // await Navigation.PushModalAsync(new BrandPage(current));
+            await Navigation.PushModalAsync(new NavigationPage(new BrandPage(current)));
         }
 
         async void OnItemSelected(object sender, SelectionChangedEventArgs e)
@@ -42,7 +43,8 @@ namespace eCommerce.Views
 
         private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new BrandPage("Best Selling"));
+            await Navigation.PushModalAsync(new NavigationPage(new BrandPage("Best Selling")));
+            //await Navigation.PushModalAsync(new BrandPage("Best Selling"));
         }
 
         private async void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)

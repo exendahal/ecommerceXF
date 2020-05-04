@@ -7,9 +7,35 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     BackgroundColor="White"
     mc:Ignorable="d">
+    <NavigationPage.TitleView>
+        <StackLayout
+            Padding="0"
+            HorizontalOptions="CenterAndExpand"
+            Orientation="Horizontal"
+            Spacing="0"
+            VerticalOptions="CenterAndExpand">
+
+            <Label
+                x:Name="title"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="CenterAndExpand"
+                Text="Gadgets"
+                TextColor="White"
+                VerticalTextAlignment="Center">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+
+        </StackLayout>
+    </NavigationPage.TitleView>
     <TabbedPage.ItemTemplate>
         <DataTemplate>
             <ContentPage Title="{Binding Name}">
+
                 <ContentPage.Resources>
                     <Style TargetType="Grid">
                         <Setter Property="VisualStateManager.VisualStateGroups">
