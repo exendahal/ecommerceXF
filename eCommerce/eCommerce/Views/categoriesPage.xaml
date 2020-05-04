@@ -98,7 +98,7 @@
 
                         </StackLayout>
 
-                        <StackLayout HeightRequest="80">
+                        <Grid HeightRequest="80">
                             <CollectionView
                                 ItemsSource="{Binding featuredItemPreview}"
                                 SelectionChanged="OnBrandsSelected"
@@ -110,7 +110,7 @@
 
                                 <CollectionView.ItemTemplate>
                                     <DataTemplate>
-                                        <StackLayout>
+                                        <Grid>
                                             <Frame
                                                 Margin="1,5,10,5"
                                                 Padding="0"
@@ -167,11 +167,12 @@
                                             </Frame>
 
 
-                                        </StackLayout>
+                                        </Grid>
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>
+
                             </CollectionView>
-                        </StackLayout>
+                        </Grid>
 
                         <!--  Item Listings  -->
                         <StackLayout>

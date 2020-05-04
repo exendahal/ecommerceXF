@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Input;
 
 namespace eCommerce.Model
 {
@@ -13,6 +14,8 @@ namespace eCommerce.Model
         readonly IList<ItemsPreview> source1;
         public ObservableCollection<BrandsItems> itemList{ get; private set; }
         public ObservableCollection<ItemsPreview> itemPreview { get; private set; }
+
+        ICommand tapCommand;
         public  BrandViewModel()
         {
             source = new List<BrandsItems>();
@@ -21,6 +24,13 @@ namespace eCommerce.Model
             CreateItemCollection();
         }
 
+        public ICommand TapCommand
+        {
+            
+            get { 
+                return tapCommand; 
+            }
+        }
         void CreateItemCollection()
         {
             source1.Add(new ItemsPreview
