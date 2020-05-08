@@ -25,7 +25,8 @@ namespace eCommerce.Views
         }
         async void OnBrandsSelected(object sender, SelectionChangedEventArgs e)
         {
-            string current = (e.CurrentSelection.FirstOrDefault() as FeaturedBrands)?.brand;
+            string current = "";
+            current=(e.CurrentSelection.FirstOrDefault() as FeaturedBrands)?.brand;
            // await Navigation.PushModalAsync(new BrandPage(current));
             await Navigation.PushModalAsync(new NavigationPage(new BrandPage(current)));
         }
