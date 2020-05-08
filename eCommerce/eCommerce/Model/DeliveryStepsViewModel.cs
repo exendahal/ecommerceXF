@@ -10,8 +10,9 @@ namespace eCommerce.Model
     public class DeliveryStepsViewModel
     {
         readonly IList<DeliverySteps> source;
-        public ObservableCollection<DeliverySteps> delList { get; private set; }      
+        public ObservableCollection<DeliverySteps> delList { get; private set; }
 
+        int currentFlag = 3; //Starts from 0
         List<tempData> tempData = new List<tempData>() {
             new tempData
             {
@@ -57,38 +58,41 @@ namespace eCommerce.Model
         }
         void CreateCollection()
         {
-            for (int i=0;i< tempData.Count;i++)
-            {
-                if (i!= (tempData.Count-1))
-                {
-                    source.Add(new DeliverySteps
-                    {
-                        Name = tempData[i].Name,
-                        Location = tempData[i].Location,
-                        dateMon = tempData[i].dateMon,
-                        tim = tempData[i].tim,
-                        colorFrame = Xamarin.Forms.Color.FromHex("#00C569"),
-                        colorLine = Xamarin.Forms.Color.FromHex("#00C569")
-                    });
-
-                }
-                else
-                {
-                    source.Add(new DeliverySteps
-                    {
-                        Name = tempData[i].Name,
-                        Location = tempData[i].Location,
-                        dateMon = tempData[i].dateMon,
-                        tim = tempData[i].tim,
-                        colorFrame = Xamarin.Forms.Color.FromHex("#00C569"),
-                        colorLine = Xamarin.Forms.Color.Transparent
-                    });
-                }
-                
-            }         
-
+          
+            Xamarin.Forms.Color frColor = Xamarin.Forms.Color.FromHex("#00C569");
+            Xamarin.Forms.Color linColor = Xamarin.Forms.Color.FromHex("#00C569");
            
-            delList = new ObservableCollection<DeliverySteps>(source);
+                for (int  i=0;i< tempData.Count;i++)
+                {
+                    if (i == (tempData.Count - 1))
+                    {
+                    linColor = Xamarin.Forms.Color.Transparent;
+                    }
+                    else
+                    {
+                        if (i<currentFlag)
+                        {
+                            frColor = Xamarin.Forms.Color.FromHex("#00C569");
+                            linColor = Xamarin.Forms.Color.FromHex("#00C569");
+                          }
+                        else
+                        {
+                            frColor = Xamarin.Forms.Color.Transparent;
+                            linColor = Xamarin.Forms.Color.FromHex("#DDDDDD");
+                        }
+                    }
+                    source.Add(new DeliverySteps
+                    {
+                        Name = tempData[i].Name,
+                        Location = tempData[i].Location,
+                        dateMon = tempData[i].dateMon,
+                        tim = tempData[i].tim,
+                        colorFrame = frColor,
+                        colorLine = linColor
+                    });
+
+                }    
+             delList = new ObservableCollection<DeliverySteps>(source);
         }
 
     }
