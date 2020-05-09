@@ -26,16 +26,6 @@ namespace eCommerce.Views
            
         }
 
-        async void OnBrandsSelected(object sender, SelectionChangedEventArgs e)
-        {            
-            string current = (e.CurrentSelection.FirstOrDefault() as FeaturedBrands)?.brand;
-            await Navigation.PushModalAsync(new BrandPage(current));
-        }
-
-        async void OnItemSelected(object sender, SelectionChangedEventArgs e)
-        {
-            string current = (e.CurrentSelection.FirstOrDefault() as ItemsPreview)?.Name;
-            await Navigation.PushModalAsync(new ProductPage());
-        }
+      
     }
 }

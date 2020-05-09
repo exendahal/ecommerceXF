@@ -6,6 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewmodels="clr-namespace:eCommerce.Model"
+    x:Name="catPage"
     BackgroundColor="White"
     mc:Ignorable="d">
 
@@ -99,10 +100,7 @@
                         </StackLayout>
 
                         <Grid HeightRequest="80">
-                            <CollectionView
-                                ItemsSource="{Binding featuredItemPreview}"
-                                SelectionChanged="OnBrandsSelected"
-                                SelectionMode="Multiple">
+                            <CollectionView ItemsSource="{Binding featuredItemPreview}">
 
                                 <CollectionView.ItemsLayout>
                                     <LinearItemsLayout ItemSpacing="0" Orientation="Horizontal" />
@@ -165,7 +163,9 @@
                                                 </StackLayout>
 
                                             </Frame>
-
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={x:Reference catPage}, Path=BindingContext.FeaturedTapCommand}" CommandParameter="{Binding .}" />
+                                            </Grid.GestureRecognizers>
 
                                         </Grid>
                                     </DataTemplate>
@@ -176,11 +176,7 @@
 
                         <!--  Item Listings  -->
                         <StackLayout>
-                            <CollectionView
-                                Grid.Row="3"
-                                ItemsSource="{Binding itemPreview}"
-                                SelectionChanged="OnItemSelected"
-                                SelectionMode="Multiple">
+                            <CollectionView Grid.Row="3" ItemsSource="{Binding itemPreview}">
 
                                 <CollectionView.ItemsLayout>
                                     <GridItemsLayout Orientation="Vertical" Span="2" />
@@ -253,6 +249,10 @@
                                                     </Label>
                                                 </StackLayout>
                                             </StackLayout>
+
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={x:Reference catPage}, Path=BindingContext.ItemTapCommand}" CommandParameter="{Binding .}" />
+                                            </Grid.GestureRecognizers>
                                         </Grid>
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>

@@ -7,6 +7,7 @@
     xmlns:ecommerce="clr-namespace:eCommerce"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewmodels="clr-namespace:eCommerce.Model"
+    x:Name="mainView"
     BackgroundColor="White"
     mc:Ignorable="d">
 
@@ -86,10 +87,7 @@
                                     Margin="0,20,0,20"
                                     HeightRequest="90"
                                     Orientation="Horizontal">
-                                    <CollectionView
-                                        ItemsSource="{Binding categories}"
-                                        SelectionChanged="OnCatItemSelected"
-                                        SelectionMode="Multiple">
+                                    <CollectionView ItemsSource="{Binding categories}">
 
                                         <CollectionView.ItemsLayout>
                                             <LinearItemsLayout ItemSpacing="10" Orientation="Horizontal" />
@@ -98,6 +96,7 @@
                                         <CollectionView.ItemTemplate>
                                             <DataTemplate>
                                                 <StackLayout>
+
                                                     <Frame
                                                         Margin="1,5,10,5"
                                                         Padding="0"
@@ -124,7 +123,9 @@
                                                             </OnPlatform>
                                                         </Label.FontFamily>
                                                     </Label>
-
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference mainView}, Path=BindingContext.CatTapCommand}" CommandParameter="{Binding .}" />
+                                                    </StackLayout.GestureRecognizers>
                                                 </StackLayout>
                                             </DataTemplate>
                                         </CollectionView.ItemTemplate>
@@ -170,10 +171,7 @@
                             </StackLayout>
 
                             <StackLayout HeightRequest="350">
-                                <CollectionView
-                                    ItemsSource="{Binding itemPreview}"
-                                    SelectionChanged="OnItemSelected"
-                                    SelectionMode="Multiple">
+                                <CollectionView ItemsSource="{Binding itemPreview}">
 
                                     <CollectionView.ItemsLayout>
                                         <LinearItemsLayout ItemSpacing="0" Orientation="Horizontal" />
@@ -237,7 +235,9 @@
                                                     </Label>
                                                 </StackLayout>
 
-
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Source={x:Reference mainView}, Path=BindingContext.ItemTapCommand}" CommandParameter="{Binding .}" />
+                                                </StackLayout.GestureRecognizers>
                                             </StackLayout>
                                         </DataTemplate>
                                     </CollectionView.ItemTemplate>
@@ -266,10 +266,7 @@
                             </StackLayout>
 
                             <StackLayout HeightRequest="80">
-                                <CollectionView
-                                    ItemsSource="{Binding featuredItemPreview}"
-                                    SelectionChanged="OnBrandsSelected"
-                                    SelectionMode="Multiple">
+                                <CollectionView ItemsSource="{Binding featuredItemPreview}">
 
                                     <CollectionView.ItemsLayout>
                                         <LinearItemsLayout ItemSpacing="0" Orientation="Horizontal" />
@@ -330,7 +327,9 @@
                                                             </Label>
                                                         </StackLayout>
                                                     </StackLayout>
-
+                                                    <Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference mainView}, Path=BindingContext.FeaturedTapCommand}" CommandParameter="{Binding .}" />
+                                                    </Frame.GestureRecognizers>
                                                 </Frame>
 
 
@@ -377,10 +376,7 @@
                             </StackLayout>
 
                             <StackLayout HeightRequest="350">
-                                <CollectionView
-                                    ItemsSource="{Binding itemPreview}"
-                                    SelectionChanged="OnItemSelected"
-                                    SelectionMode="Single">
+                                <CollectionView ItemsSource="{Binding itemPreview}">
 
                                     <CollectionView.ItemsLayout>
                                         <LinearItemsLayout ItemSpacing="0" Orientation="Horizontal" />
@@ -389,6 +385,7 @@
                                     <CollectionView.ItemTemplate>
                                         <DataTemplate>
                                             <StackLayout Margin="0" HorizontalOptions="CenterAndExpand">
+
                                                 <StackLayout>
                                                     <Frame
                                                         CornerRadius="5"
@@ -444,7 +441,9 @@
                                                     </Label>
                                                 </StackLayout>
 
-
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Source={x:Reference mainView}, Path=BindingContext.ItemTapCommand}" CommandParameter="{Binding .}" />
+                                                </StackLayout.GestureRecognizers>
                                             </StackLayout>
                                         </DataTemplate>
                                     </CollectionView.ItemTemplate>

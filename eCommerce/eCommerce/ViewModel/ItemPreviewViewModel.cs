@@ -5,6 +5,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace eCommerce.Model
@@ -19,7 +21,10 @@ namespace eCommerce.Model
 
         readonly IList<Category> source2;
         public ObservableCollection<Category> categories { get; private set; }
-      
+
+        public ICommand FeaturedTapCommand { get; set; }
+        public ICommand ItemTapCommand { get; set; }
+        public ICommand CatTapCommand { get; set; }
         public ItemPreviewViewModel()
         {
             source = new List<ItemsPreview>();
@@ -29,6 +34,22 @@ namespace eCommerce.Model
             CreateFeaturedItemCollection();
             CreateCategoriesCollection();
 
+            ItemTapCommand = new Command<ItemsPreview>(items =>
+            {                
+                Xamarin.Forms.Application.Current.MainPage.Navigation.PushModalAsync((new ProductPage()));
+            });
+
+            CatTapCommand = new Command<Category>(items =>
+            {
+                string selcate = items.title;
+                Xamarin.Forms.Application.Current.MainPage.Navigation.PushModalAsync(new categoriesPage(selcate));
+            });
+
+            FeaturedTapCommand = new Command<FeaturedBrands>(brand =>
+            {
+                string selBrand = brand.brand;
+                Xamarin.Forms.Application.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new BrandPage(selBrand)));
+            });
         }
 
        

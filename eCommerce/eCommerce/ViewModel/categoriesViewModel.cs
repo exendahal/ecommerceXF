@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace eCommerce.Model
@@ -17,13 +18,26 @@ namespace eCommerce.Model
 
         readonly IList<ItemsPreview> source;
         public ObservableCollection<ItemsPreview> itemPreview { get; private set; }
-       
+
+        public ICommand FeaturedTapCommand { get; set; }
+        public ICommand ItemTapCommand { get; set; }
         public categoriesViewModel()
         {
             source = new List<ItemsPreview>();
             source1 = new List<FeaturedBrands>();
             CreateItemCollection();
             CreateFeaturedItemCollection();
+
+            ItemTapCommand = new Command<ItemsPreview>(items =>
+            {
+                Xamarin.Forms.Application.Current.MainPage.Navigation.PushModalAsync((new ProductPage()));
+            });
+
+            FeaturedTapCommand = new Command<FeaturedBrands>(brand =>
+            {
+                string selBrand = brand.brand;
+                Xamarin.Forms.Application.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new BrandPage(selBrand)));
+            });
         }       
 
         void CreateItemCollection()
