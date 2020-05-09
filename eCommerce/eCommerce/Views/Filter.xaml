@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="eCommerce.Views.Filter"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ecommerce="clr-namespace:eCommerce"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    BackgroundColor="White"
+    mc:Ignorable="d">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Margin="20"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    HasShadow="False"
+                    HeightRequest="40"
+                    WidthRequest="40">
+                    <Image
+                        Margin="0,10,0,10"
+                        Aspect="AspectFit"
+                        HeightRequest="12"
+                        HorizontalOptions="StartAndExpand"
+                        Source="down"
+                        WidthRequest="10" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Filter"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="SFPro.ttf#Bold" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+
+                <StackLayout>
+                    <Image
+                        Margin="13,0,0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="40"
+                        WidthRequest="40" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Margin="15">
+                <ScrollView>
+                    <StackLayout>
+
+                        <StackLayout Margin="0,5,0,5">
+                            <Label
+                                FontSize="18"
+                                Text="Popularity"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <ecommerce:CustomPicker Title="Popularity" HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+                                <StackLayout>
+                                    <Image
+                                        Margin="0,10,0,10"
+                                        Aspect="AspectFit"
+                                        HeightRequest="12"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="down"
+                                        WidthRequest="10" />
+                                </StackLayout>
+
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,5,0,5">
+                            <Label
+                                FontSize="18"
+                                Text="Color"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <ecommerce:CustomPicker Title="Color" HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+                                <StackLayout>
+                                    <Image
+                                        Margin="0,10,0,10"
+                                        Aspect="AspectFit"
+                                        HeightRequest="12"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="down"
+                                        WidthRequest="10" />
+                                </StackLayout>
+
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,5,0,5">
+                            <Label
+                                FontSize="18"
+                                Text="Price"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <ecommerce:CustomPicker Title="Price" HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+                                <StackLayout>
+                                    <Image
+                                        Margin="0,10,0,10"
+                                        Aspect="AspectFit"
+                                        HeightRequest="12"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="down"
+                                        WidthRequest="10" />
+                                </StackLayout>
+
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,5,0,5">
+                            <Label
+                                FontSize="18"
+                                Text="Rating"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <ecommerce:CustomPicker Title="Rating" HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+                                <StackLayout>
+                                    <Image
+                                        Margin="0,10,0,10"
+                                        Aspect="AspectFit"
+                                        HeightRequest="12"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="down"
+                                        WidthRequest="10" />
+                                </StackLayout>
+
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,5,0,5">
+                            <Label
+                                FontSize="18"
+                                Text="Shipped From"
+                                TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <ecommerce:CustomPicker Title="Shipped From" HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+                                <StackLayout>
+                                    <Image
+                                        Margin="0,10,0,10"
+                                        Aspect="AspectFit"
+                                        HeightRequest="12"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="down"
+                                        WidthRequest="10" />
+                                </StackLayout>
+
+                            </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+
+                </ScrollView>
+            </StackLayout>
+
+            <!--  Footer  -->
+            <StackLayout
+                x:Name="footer"
+                Margin="0,5,0,5"
+                BackgroundColor="White"
+                HeightRequest="80"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand">
+
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    CornerRadius="0"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Frame
+                            Margin="-5,0,5,0"
+                            Padding="0"
+                            BackgroundColor="Transparent"
+                            BorderColor="#00C569"
+                            CornerRadius="5"
+                            HasShadow="False"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="CenterAndExpand">
+                            <Label
+                                Margin="54,15,54,15"
+                                FontSize="14"
+                                HorizontalOptions="Center"
+                                Text="CANCEL"
+                                TextColor="Black"
+                                VerticalTextAlignment="Center">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+
+                        <Frame
+                            Margin="5,0,15,0"
+                            Padding="0"
+                            BackgroundColor="#00C569"
+                            CornerRadius="5"
+                            HasShadow="False"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="CenterAndExpand">
+                            <Label
+                                Margin="54,15,54,15"
+                                FontSize="14"
+                                HorizontalOptions="Center"
+                                Text="APPLY"
+                                TextColor="White"
+                                VerticalTextAlignment="Center">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="SFPro.ttf#Bold" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

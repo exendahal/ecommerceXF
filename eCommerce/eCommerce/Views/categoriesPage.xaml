@@ -318,6 +318,9 @@
                                     </OnPlatform>
                                 </Label.FontFamily>
                             </Label>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
                         </Frame>
                     </StackLayout>
                 </Frame>

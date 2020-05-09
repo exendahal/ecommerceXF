@@ -1,5 +1,4 @@
-﻿using eCommerce.Model;
-using Rg.Plugins.Popup.Services;
+﻿using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,24 +11,22 @@ using Xamarin.Forms.Xaml;
 namespace eCommerce.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class categoriesPage : ContentPage
+    public partial class Filter :  Rg.Plugins.Popup.Pages.PopupPage
     {
-        public categoriesPage(string titleName)
+        public Filter()
         {
             InitializeComponent();
-            title.Text = titleName;
-
         }
-
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
-           
+            //await Navigation.PopModalAsync();
+            await PopupNavigation.Instance.PopAsync(true);
+
         }
 
         private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
-            await PopupNavigation.Instance.PushAsync(new Filter());
+            await PopupNavigation.Instance.PopAsync(true);
         }
     }
 }
