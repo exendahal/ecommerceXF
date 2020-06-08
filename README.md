@@ -8,6 +8,7 @@ Learn More: https://docs.microsoft.com/en-us/xamarin/xamarin-forms/
 ## Features
 * ColletionView
 * SwipeView
+* TabbedPage
 
 ## Screenshots
 <img  src="Screenshots/1.jpeg" width="250" height="450"> &nbsp;&nbsp;&nbsp; <img src="Screenshots/2.jpeg" width="250" height="450"> &nbsp;&nbsp;&nbsp; <img src="Screenshots/3.jpeg" width="250" height="450"> <br>
