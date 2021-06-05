@@ -37,13 +37,13 @@
                     HasShadow="False"
                     HeightRequest="40"
                     WidthRequest="40">
-                    <Image
-                        Margin="0,10,0,10"
-                        Aspect="AspectFit"
-                        HeightRequest="12"
+                    <Label
+                        Margin="0,10"
+                        FontFamily="MaterialFontFamily"
+                        FontSize="26"
                         HorizontalOptions="StartAndExpand"
-                        Source="shape"
-                        WidthRequest="6" />
+                        Text="&#xf141;"
+                        TextColor="Black" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />

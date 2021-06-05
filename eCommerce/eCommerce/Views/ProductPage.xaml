@@ -408,13 +408,13 @@
                     HorizontalOptions="StartAndExpand"
                     WidthRequest="40">
                     <StackLayout Orientation="Horizontal">
-                        <Image
-                            Margin="0,10,0,10"
-                            Aspect="AspectFit"
-                            HeightRequest="12"
+                        <Label
+                            Margin="0,10"
+                            FontFamily="MaterialFontFamily"
+                            FontSize="26"
                             HorizontalOptions="StartAndExpand"
-                            Source="shape"
-                            WidthRequest="6" />
+                            Text="&#xf141;"
+                            TextColor="Black" />
 
                     </StackLayout>
                     <Frame.GestureRecognizers>
@@ -430,12 +430,15 @@
                         HasShadow="False"
                         HeightRequest="40"
                         WidthRequest="40">
-                        <Image
-                            Margin="10"
-                            Aspect="AspectFit"
-                            HeightRequest="40"
-                            Source="star"
-                            WidthRequest="40" />
+                        <Label
+                            FontFamily="MaterialFontFamily"
+                            FontSize="28"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="&#xf4d2;"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center" />
                     </Frame>
 
                 </StackLayout>
