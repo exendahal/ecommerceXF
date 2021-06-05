@@ -33,6 +33,7 @@ namespace eCommerce.Droid
                 GradientDrawable gd = new GradientDrawable();
                 gd.SetStroke(0, Android.Graphics.Color.Transparent);
                 Control.SetBackground(gd);
+                //Control.SetTextColor(Android.Graphics.Color.White);
             }
         }
     }
