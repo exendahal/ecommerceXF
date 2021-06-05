@@ -2,7 +2,7 @@
 Ecommerce design with Xamarin Forms
 
 ## Developed using 
-Xamarin Forms V 4.5.0.617<br>
+Xamarin Forms V 4.5.0.617 (Updated to 5.0)<br>
 Learn More: https://docs.microsoft.com/en-us/xamarin/xamarin-forms/
 
 ## Features
