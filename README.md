@@ -9,6 +9,10 @@ Learn More: https://docs.microsoft.com/en-us/xamarin/xamarin-forms/
 * ColletionView
 * SwipeView
 * TabbedPage
+* Font Icon
+
+## Generate C# code from icon font
+Link: https://andreinitescu.github.io/IconFont2Code/
 
 ## Screenshots
 <img  src="Screenshots/1.jpeg" width="250" height="450"> &nbsp;&nbsp;&nbsp; <img src="Screenshots/2.jpeg" width="250" height="450"> &nbsp;&nbsp;&nbsp; <img src="Screenshots/3.jpeg" width="250" height="450"> <br>
