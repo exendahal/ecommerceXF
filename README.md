@@ -31,5 +31,12 @@ Link: https://andreinitescu.github.io/IconFont2Code/
 ## Preview
 <img src="Screenshots/preview.gif" width="250" height="450">
 
+
+
 ## Design Based on
 https://www.uistore.design/items/shopping-ui-kit-for-adobe-xd/
+
+
+## Stats
+<img src="https://repobeats.axiom.co/api/embed/f754ef58032e727716647785835e9969580b4e0f.svg" />
+
